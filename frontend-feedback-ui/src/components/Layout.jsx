@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Layout() {
   return (
+    
     <div className="min-h-dvh flex flex-col">
       <header className="border-4">
         <nav className="mx-auto max-w-6x1 px-4 py-3 flex gap-4">
