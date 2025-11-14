@@ -134,15 +134,16 @@ export const getFeedbackByMemberId = async (memberId) => {
 
 };
  
-// Get ALL Feedback function
- 
-
+/**
+* Get all feedback
+* @returns {Promise<Array>} Array of all feedback objects
+*/
 export const getAllFeedback = async () => {
   try {
-    const response = await fetch ('${API_BASE_URL}/feedback');
+    const response = await fetch(`${API_BASE_URL}/feedback`);
 
     if (!response.ok) {
-      throw new Error('HTTP error! status: ${response.status}');
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     return await response.json();
@@ -151,5 +152,3 @@ export const getAllFeedback = async () => {
     throw error;
   }
 };
-
-// ^^ This function is broken and unnecessary
