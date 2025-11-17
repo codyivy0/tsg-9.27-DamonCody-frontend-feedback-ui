@@ -153,13 +153,13 @@ export default function ReviewDetail() {
           </div>
 
           {/* Timestamp */}
-          {review.timestamp && (
+          {review.submittedAt && (
             <div className="mb-8">
               <div className="block text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">
                 Submitted
               </div>
               <p className="text-lg text-gray-300">
-                {formatDate(review.timestamp)}
+                {formatDate(review.submittedAt)}
               </p>
             </div>
           )}
