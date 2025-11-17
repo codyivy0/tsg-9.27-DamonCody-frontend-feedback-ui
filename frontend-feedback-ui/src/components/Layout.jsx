@@ -5,18 +5,17 @@ import { NavLink } from "react-router-dom";
 
 export default function Layout() {
   return (
-    
     <div className="min-h-dvh flex flex-col">
       <header className="border-b border-slate-600 bg-slate-800">
         <nav className="mx-auto max-w-7xl px-6 py-4 flex gap-6">
-          <NavLink 
-            to="submit-review" 
+          <NavLink
+            to="submit-review"
             className="text-white hover:text-blue-400 hover:underline transition-colors"
           >
             Submit Review
           </NavLink>
-          <NavLink 
-            to="reviews" 
+          <NavLink
+            to="reviews"
             className="text-white hover:text-blue-400 hover:underline transition-colors"
           >
             See Reviews
@@ -32,4 +31,3 @@ export default function Layout() {
     </div>
   );
 }
-
