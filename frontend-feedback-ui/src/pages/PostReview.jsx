@@ -83,30 +83,6 @@ export default function PostReview() {
       // Fallback duplicate detection for other potential formats
       let errorMessage = error.message;
 
-      // Check for duplicate indicators (be more specific)
-      if (
-        error.message.includes("409") ||
-        error.message.includes("already exists") ||
-        error.message.includes("duplicate") ||
-        error.message.includes("UNIQUE constraint") ||
-        error.message.includes("violates unique") ||
-        error.message.toLowerCase().includes("conflict")
-      ) {
-        errorMessage =
-          "You have already submitted feedback for this provider. You can only submit one review per provider.";
-      }
-      // Check if it's a validation error that mentions specific fields
-      else if (
-        error.message.includes("400") &&
-        (error.message.includes("memberId") ||
-          error.message.includes("providerName"))
-      ) {
-        errorMessage = "Please check your Member ID and Provider Name format.";
-      }
-      // Generic 400 - could still be duplicate if backend doesn't use 409
-      else if (error.message.includes("400")) {
-        errorMessage = `${error.message}\n\nIf you've already submitted feedback for this provider, you can only submit one review per provider.`;
-      }
 
       setMessage({
         type: "error",
@@ -182,7 +158,7 @@ export default function PostReview() {
         {/* Comment Field */}
         <div>
           <label className="block text-sm font-medium text-white mb-2">
-            Comment (Optional)
+            Comment (Optional){" "}
             <span className="text-gray-400 text-xs ml-2">
               {formData.comment.length}/200
             </span>
